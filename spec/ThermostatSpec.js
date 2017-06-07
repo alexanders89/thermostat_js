@@ -25,4 +25,8 @@ describe('Thermostat', function(){
       thermostat.decrease(11);
     }).toThrowError('That is too cold, brrrr!');
   });
+
+  it('power save mode is on by default', function() {
+    expect(thermostat.power_saving).toEqual(true);
+  });
 });

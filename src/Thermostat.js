@@ -2,6 +2,7 @@ const MIN_TEMP = 10;
 
 function Thermostat () {
   this.temperature = 20;
+  this.power_saving = true;
 }
 
 Thermostat.prototype.increase = function (delta) {
