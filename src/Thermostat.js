@@ -2,7 +2,7 @@ const MIN_TEMP = 10;
 
 function Thermostat () {
   this.temperature = 20;
-  this.power_saving = true;
+  this.powerSaving = true;
 }
 
 Thermostat.prototype.increase = function (delta) {
@@ -16,4 +16,12 @@ Thermostat.prototype.decrease = function (delta) {
     throw new Error('That is too cold, brrrr!');
   };
   this.temperature-= delta;
+};
+
+Thermostat.prototype.switchPowerSaving = function () {
+  if (this.powerSaving) {
+      this.powerSaving = false;
+  } else {
+      this.powerSaving = true;
+  };
 };

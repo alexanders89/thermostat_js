@@ -6,16 +6,16 @@ describe('Thermostat', function(){
     thermostat = new Thermostat();
   });
 
-  it('Thermostat is initialized at 20 degrees', function() {
+  it('is initialized at 20 degrees', function() {
     expect(thermostat.temperature).toEqual(20);
   });
 
-  it('it allows the temperature to be increased by 1 degree', function(){
+  it('allows the temperature to be increased by 1 degree', function(){
     thermostat.increase();
     expect(thermostat.temperature).toEqual(21);
   })
 
-  it('it allows the temperature to be decreased by 1 degree', function(){
+  it('allows the temperature to be decreased by 1 degree', function(){
     thermostat.decrease();
     expect(thermostat.temperature).toEqual(19);
   })
@@ -26,7 +26,12 @@ describe('Thermostat', function(){
     }).toThrowError('That is too cold, brrrr!');
   });
 
-  it('power save mode is on by default', function() {
-    expect(thermostat.power_saving).toEqual(true);
+  it('has power save mode switched on by default', function() {
+    expect(thermostat.powerSaving).toEqual(true);
+  });
+
+  it('has capability to turn power saving mode off', function() {
+    thermostat.switchPowerSaving();
+    expect(thermostat.powerSaving).toEqual(false);
   });
 });
