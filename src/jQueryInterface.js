@@ -4,18 +4,21 @@ $(document).ready( function () {
     thermostat.increase();
     alert( "It's getting hot in here!" );
     $("h2[name='currentTemperatur']").html(thermostat.getCurrentTemperature() + " °C");
+        helper();
   });
 
   $( "button[name='decrease']" ).click(function( event ) {
     thermostat.decrease();
     alert( "It's freeeezin'!" );
     $("h2[name='currentTemperatur']").html(thermostat.getCurrentTemperature() + " °C");
+        helper();
   });
 
   $( "button[name='reset']" ).click(function( event ) {
     thermostat.reset();
     alert( "Back to da roots!" );
     $("h2[name='currentTemperatur']").html(thermostat.getCurrentTemperature() + " °C");
+        helper();
   });
 
   $( "button[name='switchPowerSaving']" ).click(function( event ) {
@@ -28,4 +31,15 @@ $(document).ready( function () {
   console.log(thermostat.getCurrentTemperature())
   $("h2[name='currentTemperatur']").html(thermostat.getCurrentTemperature() + " °C");
   $("#powerSaving").html("PowerSaving: " + thermostat.powerSavingString());
+
+var helper = function(){
+if(thermostat.currentEnergyUsage() === 'low-usage'){
+  $('#currentEnergyUsage').css({'background-color': 'green'});
+} else if(thermostat.currentEnergyUsage() === 'high-usage') {
+  $('#currentEnergyUsage').css({'background-color': 'red'});
+    } else {
+  $('#currentEnergyUsage').css({'background-color': 'black'});
+}}
+
+
 });

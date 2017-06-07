@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <style >
+      #currentEnergyUsage{
+        background-color: black;
+        color: white
+      }
+    </style>
     <meta charset="utf-8">
     <script src="src/jquery.js"></script>
     <script src='src/thermostat.js'></script>
@@ -11,7 +17,7 @@
     <h1>Thermostat</h1>
     <br>
     <h2 class='display' name='currentTemperatur'>Current Temperature</h2>
-    <h3 class='display'>Current Energy Usage</h3>
+    <h3 class='display'id = currentEnergyUsage> Current Energy Usage </h3>
     <h3 class='display' id = "powerSaving">Power saving mode on?</h3>
 
     <br>
