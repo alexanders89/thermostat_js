@@ -34,4 +34,16 @@ describe('Thermostat', function(){
     thermostat.switchPowerSaving();
     expect(thermostat.powerSaving).toEqual(false);
   });
+
+  it('limits temperature to 25 degrees under power saving mode', function() {
+    expect(function() {
+      thermostat.increase(6);
+    }).toThrowError('That is too much!');
+  });
+
+  it('limits temperature to 32 degrees under regular mode', function() {
+    thermostat.switchPowerSaving();
+    expect(function() {thermostat.increase(13);}).toThrowError('That is too much!');
+    expect(function() {thermostat.increase(6);}).not.toThrowError('That is too much!');
+  });
 });
