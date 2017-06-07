@@ -1,5 +1,5 @@
 function Thermostat () {
-  this.DEFAULT_TEMP = 20
+  this.DEFAULT_TEMP = 20;
   this.MIN_TEMP = 10;
   this.MAX_ECO_TEMP = 25;
   this.MAX_REG_TEMP = 32;
@@ -50,5 +50,9 @@ Thermostat.prototype.currentEnergyUsage = function (){
       return('high-usage')
   } else {
       return('medium-usage')
-     }
+    };
+};
+
+Thermostat.prototype.getCurrentTemperatur = function (){
+  return this.temperature;
 };
