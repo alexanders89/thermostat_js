@@ -1,8 +1,9 @@
 function Thermostat () {
+  this.DEFAULT_TEMP = 20
   this.MIN_TEMP = 10;
   this.MAX_ECO_TEMP = 25;
   this.MAX_REG_TEMP = 32;
-  this.temperature = 20;
+  this.temperature = this.DEFAULT_TEMP;
   this.powerSaving = true;
 }
 
@@ -37,3 +38,7 @@ Thermostat.prototype.maxTempCheck = function () {
     return this.MAX_REG_TEMP;
   };
 };
+
+Thermostat.prototype.reset = function () {
+  this.temperature = this.DEFAULT_TEMP;
+}

@@ -46,4 +46,10 @@ describe('Thermostat', function(){
     expect(function() {thermostat.increase(13);}).toThrowError('That is too much!');
     expect(function() {thermostat.increase(6);}).not.toThrowError('That is too much!');
   });
+
+  it('temperature can be reset back to 20', function() {
+    thermostat.increase(4);
+    thermostat.reset();
+    expect(thermostat.temperature).toEqual(20);
+  })
 });
