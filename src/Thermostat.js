@@ -53,6 +53,14 @@ Thermostat.prototype.currentEnergyUsage = function (){
     };
 };
 
-Thermostat.prototype.getCurrentTemperatur = function (){
+Thermostat.prototype.getCurrentTemperature = function (){
   return this.temperature;
+};
+
+Thermostat.prototype.powerSavingString = function (){
+  if (this.powerSaving) {
+    return "on"
+  } else {
+    return "off"
+  };
 };
