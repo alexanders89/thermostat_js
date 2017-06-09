@@ -40,6 +40,9 @@ if(thermostat.currentEnergyUsage() === 'low-usage'){
     } else {
   $('#currentEnergyUsage').css({'background-color': 'black'});
 }}
+$.get('http://api.openweathermap.org/data/2.5/weather?q=London&appid=d24e620a4fda44872b67c02a8b7b4001&units=metric', function(data) {
+  $('#current-temperature').text(data.main.temp);
+})
 
 
 });
